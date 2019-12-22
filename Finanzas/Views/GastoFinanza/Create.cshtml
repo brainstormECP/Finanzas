@@ -1,0 +1,93 @@
+﻿@using Finanzas.Models
+@model Finanzas.Models.GastoFinanzas
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3 class="panel-title">Nuevo</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>GastoFinanzas</legend>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.fecha, new { Class = "form-control", Id = "datepicker" })
+                        @Html.ValidationMessageFor(model => model.fecha)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Cuentasid, "Cuentas")
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("Cuentasid")
+                        @Html.ValidationMessageFor(model => model.Cuentasid)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ConceptoGastoid, "ConceptoGasto")
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("ConceptoGastoid")
+                        @Html.ValidationMessageFor(model => model.ConceptoGastoid)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SubconceptoGastoid, "SubconceptoGasto")
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("SubconceptoGastoid",String.Empty)
+                        @Html.ValidationMessageFor(model => model.SubconceptoGastoid)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.descripcion)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.descripcion, new { Class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.descripcion)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.importe)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.importe, new { Class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.importe)
+                    </div>
+
+                    <div class="btn-group">
+                        @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                        <input class="btn btn-success" type="submit" value="Nuevo" />
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function () {
+
+            //Datepicker
+            jQuery('#datepicker').datepicker({ changeMonth: true, changeYear: true, dateFormat: "dd/mm/yy" });
+        });
+    </script>
+    <script src="~/Scripts/custom.validation.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

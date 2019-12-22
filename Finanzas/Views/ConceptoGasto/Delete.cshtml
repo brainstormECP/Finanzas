@@ -1,0 +1,38 @@
+﻿@model Finanzas.Models.ConceptoGasto
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3>Esta seguro que quiere borrar este registro?</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <fieldset>
+                <legend>ConceptoGasto</legend>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.concepto)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.concepto)
+                    </div>
+                </div>
+            </fieldset>
+            @using (Html.BeginForm())
+            {
+                <div class="btn-group">
+                    @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                    <input class="btn btn-danger" type="submit" value="Borrar" />
+                </div>
+            }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>

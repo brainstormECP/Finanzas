@@ -1,0 +1,128 @@
+﻿@using Finanzas.Models
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="IglesiAlDia">
+    <meta name="author" content="Dani">
+    <link rel="shortcut icon" href="/Content/images/favicon.png" type="image/png" />
+
+
+    <title>IglesiAlDia</title>
+
+    <link href="~/Content/css/style.default.css" rel="stylesheet" />    
+    <link href="~/Content/css/custom.style.css" rel="stylesheet" />
+    @Html.DevExpress().GetStyleSheets(
+            new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.GridView },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Chart },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Report },
+            new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler }
+             )
+    @Html.DevExpress().GetScripts(
+            new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+            new Script { ExtensionSuite = ExtensionSuite.HtmlEditor },
+            new Script { ExtensionSuite = ExtensionSuite.GridView },
+            new Script { ExtensionSuite = ExtensionSuite.PivotGrid },
+            new Script { ExtensionSuite = ExtensionSuite.Editors },
+            new Script { ExtensionSuite = ExtensionSuite.Chart },
+            new Script { ExtensionSuite = ExtensionSuite.Report },
+            new Script { ExtensionSuite = ExtensionSuite.Scheduler }
+             )
+    <script src="~/Content/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/modernizr.min.js"></script>
+    <script src="~/Content/js/jquery.sparkline.min.js"></script>
+    <script src="~/Content/js/toggles.min.js"></script>
+    <script src="~/Content/js/retina.min.js"></script>
+    <script src="~/Content/js/jquery.cookies.js"></script>
+    @*<script src="~/Content/js/jquery.tagsinput.min.js"></script>*@
+    <script src="~/Content/js/morris.min.js"></script>
+    <script src="~/Content/js/raphael-2.1.0.min.js"></script>
+    
+    <script src="~/Content/js/chosen.jquery.min.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="~/Content/js/html5shiv.js"></script>
+  <script src="~/Content/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+
+    <section>
+        @{
+            var user = Session["usuarioActual"] as Usuario;
+            switch (user.Rol.nombreRol)
+            {
+                case "Administrador":
+                    @Html.Partial("_adminSideBarPartial")
+                    break;
+                case "Tesorero":
+                    @Html.Partial("_tesoreroSideBarPartial")
+                    break;
+                default:
+                    @Html.Partial("_secretariaSideBarPartial")
+                    break;
+            }
+        }
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+                <div class="header-right">
+                    <ul class="headermenu">
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    @user.nombreUsuario (@user.Rol.nombreRol)
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                    <li><a href="/Account/ChangePassword"><i class="glyphicon glyphicon-cog"></i>Cambiar Contraseña</a></li>
+                                    <li><a href="/Account/LogOff"><i class="glyphicon glyphicon-log-out"></i>Cerrar Seccion</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- header-right -->
+                
+            </div>
+            <!-- headerbar -->
+
+            <div class="pageheader">
+                <h2><i class="fa fa-home"></i> Home<span>Subtitle goes here...</span></h2>
+            </div>
+
+            <div class="contentpanel">
+                @RenderSection("featured", required: false)
+                <section class="content-wrapper main-content clear-fix">
+                    @RenderBody()
+                </section>
+            </div>
+            <!-- contentpanel -->
+
+        </div>
+        <!-- mainpanel -->
+    </section>
+    
+    
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

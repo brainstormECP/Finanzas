@@ -1,0 +1,16 @@
+﻿@model dynamic
+
+@{
+    Layout = "~/Views/Shared/_ReportLayout.cshtml";
+    ViewBag.Title = "Reportes";
+}
+<div class="row">
+    @Html.DevExpress().ReportToolbar(settings =>
+{
+    // The following settings are necessary for a Report Toolbar. 
+    settings.Name = "ReportToolbar";
+    settings.ReportViewerName = "reportViewer1";
+}).GetHtml()
+
+    @Html.Partial("ReportViewerPartial")
+</div>

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Mision</h3>
+                <p class="mb15">
+                    Alcanzar personas para Cristo enseñándoles y ayudándoles  a crecer en su fe, celebrando juntos la presencia de Dios y sirviendo a los demás según los dones y talentos que Dios ha dado a cada uno. 
+                </p>
+                <p><em>Por tanto, id, y haced discípulos a todas las naciones,  bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.
+                    Mateo 28:19</em>
+                </p>
+                
+                <h3>Vision</h3>
+                <p class="mb15">
+                    Una iglesia en la que se adore a Dios con devoción y se celebren cultos inspiradores, con una alabanza viva, 
+                    predicaciones bíblicas y encuentros con Dios a través de la oración. Donde todos sus miembros sirvan a Dios según los dones de cada cual. 
+                    Donde la comunión entre los hermanos sea una realidad edificante y una fuerza de atracción para las personas de la comunidad.</p>
+                <p>
+                    Una estructura de ministerios, orientados a incorporar personas a la congregación e integrar a cada miembro en el lugar que mejor se ajuste a sus dones. 
+                    Desarrollar programas que apoyen el trabajo de evangelismo y discipulado. Brindar apoyo emocional, espiritual y material a cada miembro de la congregación. </p>
+                <p>
+                    Una estructura de grupos pequeños, grupos de evangelismo y discipulado, que funcionen fuera del templo alcanzando personas para Cristo, 
+                    preparándoles espiritualmente e incorporándolos a la congregación.
+                </p>
+                <div id="line-chart" style="height: 248px; width: 500px"></div>
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Content/js/flot/flot.min.js"></script>
+    @*<script src="~/Content/js/flot/flot.resize.min.js"></script>*@
+    <script src="~/Content/js/dashboard.js"></script>
+}

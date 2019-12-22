@@ -1,0 +1,111 @@
+﻿@model Finanzas.Models.Persona
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3>Esta seguro que quiere borrar este registro?</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <fieldset>
+                <legend>Persona</legend>
+                
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.ci)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.ci)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.nombre)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.nombre)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.apellido1)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.apellido1)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.apellido2)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.apellido2)
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.fechaNacimiento)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.fechaNacimiento)
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.sexo)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.sexo)
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.activo)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.activo)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.miembro)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.miembro)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.fechaBautismo)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.fechaBautismo)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.fechaConversion)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.fechaConversion)
+                    </div>
+                </div>
+            </fieldset>
+            @using (Html.BeginForm())
+            {
+                <div class="btn-group">
+                    @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                    <input class="btn btn-danger" type="submit" value="Borrar" />
+                </div>
+            }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>

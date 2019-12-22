@@ -1,0 +1,348 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2>Reportes</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Compras del Mes</h4>
+                <p>Muestra el listado de las compras del mes realizadas por el Un Grano de Arena.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Compras","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Cumpleaños de la Semana</h4>
+                <p>Muestra el listado de las personas que cumplen año en la semana actual y su categoria.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Cumpleanos","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Diezmadores del Mes</h4>
+                <p>Muestra el listado de los diezmadores del mes y el importe del diezmo.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Diezmadores","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Gastos del Mes</h4>
+                <p>Muestra el listado de los gasto del mes y por cuenta.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Gastos","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Ingresos del Mes</h4>
+                <p>Muestra el listado de los ingresos del mes.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Ingresos","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Miembros</h4>
+                <p>Muestra el listado de los miembros activos.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Miembros","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Registro Asistencia</h4>
+                <p>Muestra el listado de las personas para el registro de asistencia.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","RegistroAsistencia","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Salidas del Mes</h4>
+                <p>Muestra el listado de las salidas de almacen del proyecto un grano de arena.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Salidas","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Personas por Categoria</h4>
+                <p>Muestra el listado de las personas activas agrupadas por categoria.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","PersonaxCategoria","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Cumpleaños por Fecha</h4>
+                <p>Muestra el listado de las personas que cumplen años en el rango de fecha seleccionado.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","CumpleannoXFecha","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Bautizados por Fecha</h4>
+                <p>Muestra el listado de las personas que fueron bautizadas en el rango de fecha seleccionado.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","BautizadosXFecha","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Convertidos por Fecha</h4>
+                <p>Muestra el listado de las personas activas que se convirtieron en el rango de fecha especificado.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","ConvertidosXFecha","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Estados de Cuentas</h4>
+                <p>Muestra el estado de la cuenta seleccionada en el rango de fecha seleccionado. Es decir los ingresos y gastos incurridos en la misma.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","EstadosCuentas","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Ingresos por Fecha</h4>
+                <p>Muestra el listado de los ingresos en el rango de fecha seleccionado.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","IngresosXFecha","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-btns">
+                    <a href="#" class="panel-close">&times;</a>
+                    <a href="#" class="minimize">&minus;</a>
+                </div>
+                <!-- panel-btns -->
+                <h4 class="panel-title">Almacen</h4>
+                <p>Muestra el listado de los productos en almacen.</p>
+            </div>
+            <!-- panel-heading -->
+            <div class="panel-body">
+
+                <!-- Button trigger modal -->
+                @Html.ActionLink("Mostrar Reporte","Almacen","Reporte",null,new { Class= "btn btn-primary btn-lg"})
+                
+            </div>
+        </div>
+        <!-- panel -->
+    </div>
+</div>

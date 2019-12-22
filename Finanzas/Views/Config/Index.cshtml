@@ -1,0 +1,56 @@
+﻿@model Finanzas.Models.ConfiguracionModel
+
+@{
+    ViewBag.Title = "Configuracion";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3 class="panel-title">Configuracion</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>Configuracion del sistema</legend>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AnoActual)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.AnoActual, new { Class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AnoActual)
+                    </div>
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MesActual)
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("MesActual")
+                        @Html.ValidationMessageFor(model => model.MesActual)
+                    </div>
+
+                    <div class="btn-group">
+                        @Html.ActionLink("Atras", "Index","Home", null, new { Class = "btn btn-info" })
+                        <input class="btn btn-success" type="submit" value="Guardar" />
+                    </div>
+
+                </fieldset>
+        }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,39 @@
+﻿@model Finanzas.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewBag.Title = "Iniciar Sesión";
+}
+
+<div class="signinpanel">
+    
+    <div class="row">
+        <div class="col-md-5">
+            <img src="~/Content/images/Logo.jpg"/>
+        </div>
+        <div class="col-md-5">
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "El nombre de usurio o la contraña son incorrectos")
+                <h4 class="nomargin">Inicie Seccion</h4>
+                <fieldset>
+                    <legend>Formulario de Inicio de Sesión </legend>
+
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.UserName, new { Class = "form-control uname", Placeholder = "Usuario" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                    <div class="form-group">
+                        @Html.PasswordFor(m => m.Password, new { Class = "form-control pword", Placeholder = "Contraseña" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                    <button class="btn btn-success btn-block" type="submit">Iniciar Sesión</button>
+                </fieldset>
+            }
+        </div>
+        <!-- col-sm-5 -->
+
+    </div>
+    <!-- row -->
+</div>
+<!-- signin -->

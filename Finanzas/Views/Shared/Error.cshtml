@@ -1,0 +1,17 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = "_ErrorLayout.cshtml";
+    ViewBag.Title = "Error";
+}
+
+<div class="notfoundpanel">
+    <h1>Error!</h1>
+    <h3>Ocurrio un error en la solicitud que usted realizo.</h3>
+    <h4>@Model.Exception.Message</h4>
+    <div class="btn-group">
+        @Html.ActionLink("Inicio", "Index", "Home", null, new { Class = "btn btn-default" })
+        @Html.ActionLink("Iniciar Sesion", "Login", "Account", null, new { Class = "btn btn-primary" })
+    </div>
+</div>
+<!-- notfoundpanel -->

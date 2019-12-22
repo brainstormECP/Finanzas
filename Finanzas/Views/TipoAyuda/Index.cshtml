@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Finanzas.Models.TipoAyuda>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3 class="panel-title">@Html.ActionLink("Nuevo", "Create", null, new { Class = "btn btn-success" })</h3>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table" id="table1">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tipo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.descripcion)
+                        </th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tipo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.descripcion)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { Class = "btn btn-primary" })
+                                @Html.ActionLink("Borrar", "Delete", new { id = item.id }, new { Class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- table-responsive -->
+    </div>
+    <!-- panel-body -->
+</div>
+<!-- panel -->
+
+@section Scripts
+{
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#table1').dataTable({
+                "sPaginationType": "full_numbers"
+            });
+
+            // Chosen Select
+            jQuery("select").chosen({
+                'min-width': '100px',
+                'white-space': 'nowrap',
+                disable_search_threshold: 10
+            });
+
+            // Delete row in a table
+            jQuery('.delete-row').click(function () {
+                var c = confirm("Continue delete?");
+                if (c)
+                    jQuery(this).closest('tr').fadeOut(function () {
+                        jQuery(this).remove();
+                    });
+
+                return false;
+            });
+
+            // Show aciton upon row hover
+            jQuery('.table-hidaction tbody tr').hover(function () {
+                jQuery(this).find('.table-action-hide a').animate({ opacity: 1 });
+            }, function () {
+                jQuery(this).find('.table-action-hide a').animate({ opacity: 0 });
+            });
+        });
+    </script>
+}

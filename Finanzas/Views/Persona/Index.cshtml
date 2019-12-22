@@ -1,0 +1,128 @@
+﻿@model IEnumerable<Finanzas.Models.Persona>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3 class="panel-title">@Html.ActionLink("Nuevo", "Create", null, new { Class = "btn btn-success" }) @Html.ActionLink("Personas Inactivas", "Inactivas", null, new { Class = "btn btn-info" })</h3>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table" id="table1">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Nombre y Apellidos")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Nacimiento")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Categoria")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Conversion")
+                        </th>
+                        <th>
+                            @Html.DisplayName("Bautismo")
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.miembro)
+                        </th>
+                        <th>
+                            @Html.DisplayName("Mision")
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.activo)
+                        </th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                                @Html.DisplayFor(modelItem => item.apellido1)
+                                @Html.DisplayFor(modelItem => item.apellido2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fechaNacimiento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CategoriaPersona.categoria)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fechaConversion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fechaBautismo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.miembro)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MisionPertenece.lugar)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.activo)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { Class = "btn btn-primary" })
+                                @Html.ActionLink("Borrar", "Delete", new { id = item.id }, new { Class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- table-responsive -->
+    </div>
+    <!-- panel-body -->
+</div>
+<!-- panel -->
+
+@section Scripts
+{
+    <script src="~/Content/js/jquery.datatables.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#table1').dataTable({
+                "sPaginationType": "full_numbers"
+            });
+
+            // Chosen Select
+            jQuery("select").chosen({
+                'min-width': '100px',
+                'white-space': 'nowrap',
+                disable_search_threshold: 10
+            });
+
+            // Delete row in a table
+            jQuery('.delete-row').click(function () {
+                var c = confirm("Continue delete?");
+                if (c)
+                    jQuery(this).closest('tr').fadeOut(function () {
+                        jQuery(this).remove();
+                    });
+
+                return false;
+            });
+
+            // Show aciton upon row hover
+            jQuery('.table-hidaction tbody tr').hover(function () {
+                jQuery(this).find('.table-action-hide a').animate({ opacity: 1 });
+            }, function () {
+                jQuery(this).find('.table-action-hide a').animate({ opacity: 0 });
+            });
+        });
+    </script>
+}

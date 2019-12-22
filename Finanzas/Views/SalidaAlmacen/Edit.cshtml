@@ -1,0 +1,76 @@
+﻿@model Finanzas.Models.SalidaAlmacen
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3 class="panel-title">Editar</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>SalidaAlmacen</legend>
+
+                    @Html.HiddenFor(model => model.id)
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Almacenid, "Almacen")
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("Almacenid")
+                        @Html.ValidationMessageFor(model => model.Almacenid)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.fecha)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.fecha, new { Class = "form-control", Id = "datepicker", Value = Model.fecha.ToShortDateString() })
+                        @Html.ValidationMessageFor(model => model.fecha)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.cantidad)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.cantidad, new { Class= "form-control" })
+                        @Html.ValidationMessageFor(model => model.cantidad)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TipoAyudaid, "TipoAyuda")
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("TipoAyudaid")
+                        @Html.ValidationMessageFor(model => model.TipoAyudaid)
+                    </div>
+
+                    <div class="btn-group">
+                        @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                        <input class="btn btn-success" type="submit" value="Guardar" />
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>
+@section Scripts {
+    <script>
+        jQuery(document).ready(function () {
+            //Datepicker
+            jQuery('#datepicker').datepicker({ changeMonth: true, changeYear: true, dateFormat: "dd/mm/yy" });
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

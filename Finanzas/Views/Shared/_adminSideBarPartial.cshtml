@@ -1,0 +1,130 @@
+﻿@using Finanzas.Models
+<div class="leftpanel">
+
+    <div class="logopanel">
+        <h1><span>[</span> IglesiAlDia <span>]</span></h1>
+    </div>
+    <!-- logopanel -->
+
+    <div class="leftpanelinner">
+
+        <!-- This is only visible to small devices -->
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">
+            <div class="media userlogged">
+                <div class="media-body">
+                    @{
+                        var user = Session["usuarioActual"] as Usuario;
+                    }
+                    <h4>@user.nombreUsuario (@user.Rol.nombreRol)</h4>
+                </div>
+            </div>
+
+            <h5 class="sidebartitle actitle">Cuenta</h5>
+            <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                <li><a href="@Url.Action("ChangePassword","Account")"><i class="fa fa-cog"></i><span>Cambiar Contraseña</span></a></li>
+                <li><a href="@Url.Action("LogOff","Account")"><i class="fa fa-sign-out"></i><span>Cerrar Seccion</span></a></li>
+            </ul>
+        </div>
+
+        <h5 class="sidebartitle">Menu</h5>
+        <ul class="nav nav-pills nav-stacked nav-bracket">
+
+            <li class="active"><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i><span>Inicio</span></a></li>
+
+            <li><a href="@Url.Action("Index","Usuario")"><i class="fa fa-users"></i><span>Usuarios</span></a></li>
+            
+            <li><a href="@Url.Action("Index","Config")"><i class="fa fa-users"></i><span>Configuracion</span></a></li>
+
+            <li class="nav-parent"><a href="#"><i class="fa fa-edit"></i><span>Secretaría de la Iglesia</span></a>
+                <ul class="children">
+                    <li><a href="@Url.Action("Index","CategoriaPersona")"><i class="fa fa-caret-right"></i>Categoria de las Personas</a></li>
+                    <li><a href="@Url.Action("Index","Persona")"><i class="fa fa-caret-right"></i>Listado General</a></li>
+                    <li><a href="@Url.Action("Index","Mision")"><i class="fa fa-caret-right"></i><span>Misiones</span></a></li>
+                    <li><a href="@Url.Action("Index","TemaPredicacion")"><i class="fa fa-caret-right"></i><span>Temas de predicacion</span></a></li>
+                    <li><a href="@Url.Action("Index","EscuelaDominical")"><i class="fa fa-caret-right"></i><span>Gestionar Asistencia</span></a></li>
+                </ul>
+            </li>
+
+            <li class="nav-parent"><a href="#"><i class="fa fa-money"></i><span>Finanzas de la Iglesia</span></a>
+                <ul class="children">
+                    <li><a href="@Url.Action("Index","Cuenta")"><i class="fa fa-caret-right"></i><span>Gestionar Cuentas</span></a></li>
+                    <li><a href="@Url.Action("Index","ConceptoGasto")"><i class="fa fa-caret-right"></i>Conceptos de Gastos</a></li>
+                    <li><a href="@Url.Action("Index","SubconceptoGasto")"><i class="fa fa-caret-right"></i>Subconceptos de Gastos</a></li>
+                    <li><a href="@Url.Action("Index","ConceptoIngreso")"><i class="fa fa-caret-right"></i>Conceptos de Ingresos</a></li>
+                    <li><a href="@Url.Action("Index","IngresoFinanza")"><i class="fa fa-caret-right"></i>Gestionar Ingresos</a></li>
+                    <li><a href="@Url.Action("Index","GastoFinanza")"><i class="fa fa-caret-right"></i>Gestionar Gastos</a></li>
+                    <li><a href="@Url.Action("Index","Cierre")"><i class="fa fa-caret-right"></i>Cierre del Mes</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-parent"><a href="#"><i class="fa fa-file-text"></i><span>Un grano de arena</span></a>
+                <ul class="children">
+                    <li><a href="@Url.Action("Index","Producto")"><i class="fa fa-caret-right"></i>Producto</a></li>
+                    <li><a href="@Url.Action("Index","Almacen")"><i class="fa fa-caret-right"></i>Almacen</a></li>
+                    <li><a href="@Url.Action("Index","CompraProducto")"><i class="fa fa-caret-right"></i>Compras</a></li>
+                    <li><a href="@Url.Action("Index","SalidaAlmacen")"><i class="fa fa-caret-right"></i>Salidas de Almacen</a></li>
+                    <li><a href="@Url.Action("Index","TipoAyuda")"><i class="fa fa-caret-right"></i>Tipo de Ayuda</a></li>
+                    <li><a href="@Url.Action("Index","UnidadMedida")"><i class="fa fa-caret-right"></i>Unidad de Medida</a></li>
+                </ul>
+            </li>
+            <li><a href="@Url.Action("Index","TipoMoneda")"><i class="fa fa-file-text"></i><span>Tipo de Moneda</span></a></li>
+            <li><a href="@Url.Action("Index","Reporte")"><i class="fa fa-file-text"></i><span>Reportes</span></a></li>
+        </ul>
+
+        <div class="infosummary">
+            @{
+                var db = new Entities();
+                var config = ConfiguracionModel.GetConfig();
+                var misiones = db.Misiones.Count();
+                var personasA = db.Persona.Count(p => p.activo);
+                var miembros = db.Persona.Count(p => p.activo && p.miembro);
+                var listaIngresoMN = db.IngresoFinanzas.Where(i => i.fecha.Month == config.MesActual && i.fecha.Year == config.AnoActual && i.Cuentas.TipoMoneda.siglas == "MN");
+                var ingresosMN = !listaIngresoMN.Any() ? 0 : listaIngresoMN.Sum(i => i.importe);
+                var listaGastosMN = db.GastoFinanzas.Where(i => i.fecha.Month == config.MesActual && i.fecha.Year == config.AnoActual && i.Cuentas.TipoMoneda.siglas == "MN");
+                var gastosMN = !listaGastosMN.Any() ? 0 : listaGastosMN.Sum(i => i.importe);
+            }
+            <h5 class="sidebartitle">Resumen General</h5>
+            <ul>
+                <li>
+                    <div class="datainfo">
+                        <span class="text-muted">Personas Activas</span>
+                        <h4>@personasA</h4>
+                    </div>
+                    <div id="sidebar-chart" class="chart"></div>
+                </li>
+                <li>
+                    <div class="datainfo">
+                        <span class="text-muted">Miembros</span>
+                        <h4>@miembros</h4>
+                    </div>
+                    <div id="sidebar-chart2" class="chart"></div>
+                </li>
+                <li>
+                    <div class="datainfo">
+                        <span class="text-muted">Misiones</span>
+                        <h4>@misiones</h4>
+                    </div>
+                    <div id="sidebar-chart3" class="chart"></div>
+                </li>
+                <li>
+                    <div class="datainfo">
+                        <span class="text-muted">Ingresos del Mes</span>
+                        <h4>@ingresosMN</h4>
+                    </div>
+                    <div id="sidebar-chart4" class="chart"></div>
+                </li>
+                <li>
+                    <div class="datainfo">
+                        <span class="text-muted">Gastos del Mes</span>
+                        <h4>@gastosMN</h4>
+                    </div>
+                    <div id="sidebar-chart5" class="chart"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- infosummary -->
+
+    </div>
+    <!-- leftpanelinner -->
+</div>
+<!-- leftpanel -->

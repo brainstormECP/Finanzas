@@ -1,0 +1,50 @@
+﻿@model Finanzas.Models.RegistroAsistenciaModel
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>Producto</legend>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Trimestre)
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("Trimestre")
+                        @Html.ValidationMessageFor(model => model.Trimestre)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CategoriaPersonaid, "Categoria")
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownList("CategoriaPersonaid", null, new { Class = "chosen-select", Multiple = "" })
+                        @Html.ValidationMessageFor(model => model.CategoriaPersonaid)
+                    </div>
+
+                    <div class="btn-group">
+                        @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                        <input class="btn btn-success" type="submit" value="Nuevo" />
+                    </div>
+                </fieldset>
+        }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>
+
+@section Scripts {
+    <script>
+        jQuery(document).ready(function () {
+            // Chosen Select
+            jQuery(".chosen-select").chosen({ 'width': '100%', 'white-space': 'nowrap' });
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,63 @@
+﻿@model Finanzas.Models.Cuentas
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-btns">
+            <a href="#" class="panel-close">&times;</a>
+            <a href="#" class="minimize">&minus;</a>
+        </div>
+        <!-- panel-btns -->
+        <h3>Esta seguro que quiere borrar este registro?</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <fieldset>
+                <legend>Cuentas</legend>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.nombre)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.nombre)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.descriptcion)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.descriptcion)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.importe)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.importe)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.TipoMoneda.siglas)
+
+                    <div class="label label-warning">
+                        @Html.DisplayFor(model => model.TipoMoneda.siglas)
+                    </div>
+                </div>
+            </fieldset>
+            @using (Html.BeginForm())
+            {
+                <div class="btn-group">
+                    @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                    <input class="btn btn-danger" type="submit" value="Borrar" />
+                </div>
+            }
+        </div>
+    </div>
+    <!-- panel-body -->
+</div>

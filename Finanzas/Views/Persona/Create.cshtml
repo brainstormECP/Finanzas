@@ -1,0 +1,141 @@
+﻿@model Finanzas.Models.Persona
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<div class="signuppanel">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="nomargin">Nuevo</h3>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>Persona</legend>
+
+                    <div class="row mb10">
+                        <div class="col-sm-3">
+
+                            @Html.TextBoxFor(model => model.ci, new { Class = "form-control", Placeholder = "Ci" })
+                            @Html.ValidationMessageFor(model => model.ci)
+
+                        </div>
+                        <div class="col-sm-3">
+                            @Html.TextBoxFor(model => model.nombre, new { Class = "form-control", Placeholder = "Nombre" })
+                            @Html.ValidationMessageFor(model => model.nombre)
+
+                        </div>
+                        <div class="col-sm-3">
+                            @Html.TextBoxFor(model => model.apellido1, new { Class = "form-control", Placeholder = "Primer Apellido" })
+                            @Html.ValidationMessageFor(model => model.apellido1)
+                        </div>
+                        <div class="col-sm-3">
+                            @Html.TextBoxFor(model => model.apellido2, new { Class = "form-control", Placeholder = "Segundo Apellido" })
+                            @Html.ValidationMessageFor(model => model.apellido2)
+                        </div>
+                    </div>
+                    <div class="row mb10">
+                        <div class="col-sm-1 control-label">
+                            @Html.LabelFor(model => model.CategoriaPersonaid, "Categoria")
+                        </div>
+                        <div class="col-sm-3">
+                            @Html.DropDownList("CategoriaPersonaid")
+                            @Html.ValidationMessageFor(model => model.CategoriaPersonaid)
+                        </div>
+
+                        <div class="col-sm-2 control-label">
+                            @Html.LabelFor(model => model.fechaNacimiento)
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(model => model.fechaNacimiento, new { Class = "form-control", Id = "datepicker" })
+                            @Html.ValidationMessageFor(model => model.fechaNacimiento)
+                        </div>
+
+                        <div class="col-sm-1 control-label">
+                            @Html.LabelFor(model => model.sexo)
+                        </div>
+                        <div class="col-sm-1">
+                            <input id="sexo" type="text" class="form-control" readonly="readonly" />
+                        </div>
+                    </div>
+
+                    <div class="row mb10">
+                        <div class="col-sm-1 control-label">
+                            @Html.LabelFor(model => model.fechaConversion)
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(model => model.fechaConversion, new { Class = "form-control", Id = "datepicker1" })
+                            @Html.ValidationMessageFor(model => model.fechaConversion)
+                        </div>
+
+                        <div class="col-sm-2 control-label">
+                            @Html.LabelFor(model => model.fechaBautismo)
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.TextBoxFor(model => model.fechaBautismo, new { Class = "form-control", Id = "datepicker2" })
+                            @Html.ValidationMessageFor(model => model.fechaBautismo)
+                        </div>
+
+                        <div class="col-sm-2 control-label">
+                            @Html.LabelFor(model => model.MisionPertenece)
+                        </div>
+                        <div class="col-sm-3">
+                            @Html.DropDownList("Misionesid", String.Empty)
+                            @Html.ValidationMessageFor(model => model.Misionesid)
+                        </div>
+                    </div>
+
+                    <div class="row mb10">
+                        <div class="col-sm-2">
+                            @Html.CheckBoxFor(model => model.miembro)
+                            @Html.LabelFor(model => model.miembro)
+                        </div>
+
+                        <div class="col-sm-2">
+                            @Html.CheckBoxFor(model => model.activo, new { Checked = true })
+                            @Html.LabelFor(model => model.activo)
+                        </div>
+                    </div>
+
+
+                    <div class="row mb10">
+                        <div class="col-sm-3">
+                            <div class="btn-group">
+                                @Html.ActionLink("Atras", "Index", null, new { Class = "btn btn-info" })
+                                <input class="btn btn-success" type="submit" value="Nuevo" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        jQuery(document).ready(function () {
+
+            //Datepicker
+            jQuery('#datepicker').datepicker({ changeMonth: true, changeYear: true, dateFormat: "dd/mm/yy" });
+            jQuery('#datepicker1').datepicker({ changeMonth: true, changeYear: true, dateFormat: "dd/mm/yy" });
+            jQuery('#datepicker2').datepicker({ changeMonth: true, changeYear: true, dateFormat: "dd/mm/yy" });
+
+            $('#ci').keyup(function () {
+                var ci = $(this).attr('value');
+                if (ci.length == 10) {
+                    var sex = ci[9];
+                    if (sex % 2 == 0) {
+                        sex = "M";
+                    } else {
+                        sex = "F";
+                    }
+                }
+                $('#sexo').attr({ value: sex });
+            });
+
+        });
+    </script>
+    <script src="~/Scripts/custom.validation.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

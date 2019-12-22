@@ -1,0 +1,43 @@
+﻿@model Finanzas.Models.EscuelaDominical
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>EscuelaDominical</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.asistencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.asistencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TemaPredicacion.tema)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TemaPredicacion.tema)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.nombreUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.nombreUsuario)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
