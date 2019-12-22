@@ -1,0 +1,1531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinanzasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FinanzasModelStoreContainer">
+          <EntitySet Name="Almacen" EntityType="FinanzasModel.Store.Almacen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CategoriaPersona" EntityType="FinanzasModel.Store.CategoriaPersona" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompraProducto" EntityType="FinanzasModel.Store.CompraProducto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConceptoGasto" EntityType="FinanzasModel.Store.ConceptoGasto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConceptoIngreso" EntityType="FinanzasModel.Store.ConceptoIngreso" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cuentas" EntityType="FinanzasModel.Store.Cuentas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EscuelaDominical" EntityType="FinanzasModel.Store.EscuelaDominical" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GastoFinanzas" EntityType="FinanzasModel.Store.GastoFinanzas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IngresoFinanzas" EntityType="FinanzasModel.Store.IngresoFinanzas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Misiones" EntityType="FinanzasModel.Store.Misiones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Persona" EntityType="FinanzasModel.Store.Persona" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Producto" EntityType="FinanzasModel.Store.Producto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rol" EntityType="FinanzasModel.Store.Rol" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalidaAlmacen" EntityType="FinanzasModel.Store.SalidaAlmacen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubconceptoGasto" EntityType="FinanzasModel.Store.SubconceptoGasto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TemaPredicacion" EntityType="FinanzasModel.Store.TemaPredicacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoAyuda" EntityType="FinanzasModel.Store.TipoAyuda" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoMoneda" EntityType="FinanzasModel.Store.TipoMoneda" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UnidadMedida" EntityType="FinanzasModel.Store.UnidadMedida" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="FinanzasModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FKAlmacen650471" Association="FinanzasModel.Store.FKAlmacen650471">
+            <End Role="TipoMoneda" EntitySet="TipoMoneda" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKAlmacen795546" Association="FinanzasModel.Store.FKAlmacen795546">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKCompraProd505569" Association="FinanzasModel.Store.FKCompraProd505569">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="CompraProducto" EntitySet="CompraProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FKCompraProd527192" Association="FinanzasModel.Store.FKCompraProd527192">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="CompraProducto" EntitySet="CompraProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FKCompraProd845775" Association="FinanzasModel.Store.FKCompraProd845775">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="CompraProducto" EntitySet="CompraProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FKCuentas36608" Association="FinanzasModel.Store.FKCuentas36608">
+            <End Role="TipoMoneda" EntitySet="TipoMoneda" />
+            <End Role="Cuentas" EntitySet="Cuentas" />
+          </AssociationSet>
+          <AssociationSet Name="FKEscuelaDom17470" Association="FinanzasModel.Store.FKEscuelaDom17470">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="EscuelaDominical" EntitySet="EscuelaDominical" />
+          </AssociationSet>
+          <AssociationSet Name="FKEscuelaDom783010" Association="FinanzasModel.Store.FKEscuelaDom783010">
+            <End Role="TemaPredicacion" EntitySet="TemaPredicacion" />
+            <End Role="EscuelaDominical" EntitySet="EscuelaDominical" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan245216" Association="FinanzasModel.Store.FKGastoFinan245216">
+            <End Role="ConceptoGasto" EntitySet="ConceptoGasto" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan518235" Association="FinanzasModel.Store.FKGastoFinan518235">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan854732" Association="FinanzasModel.Store.FKGastoFinan854732">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan990835" Association="FinanzasModel.Store.FKGastoFinan990835">
+            <End Role="SubconceptoGasto" EntitySet="SubconceptoGasto" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin123343" Association="FinanzasModel.Store.FKIngresoFin123343">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin191449" Association="FinanzasModel.Store.FKIngresoFin191449">
+            <End Role="ConceptoIngreso" EntitySet="ConceptoIngreso" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin249625" Association="FinanzasModel.Store.FKIngresoFin249625">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin745088" Association="FinanzasModel.Store.FKIngresoFin745088">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKMisiones810133" Association="FinanzasModel.Store.FKMisiones810133">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Misiones" EntitySet="Misiones" />
+          </AssociationSet>
+          <AssociationSet Name="FKPersona44495" Association="FinanzasModel.Store.FKPersona44495">
+            <End Role="CategoriaPersona" EntitySet="CategoriaPersona" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FKPersona52500" Association="FinanzasModel.Store.FKPersona52500">
+            <End Role="Misiones" EntitySet="Misiones" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FKProducto768955" Association="FinanzasModel.Store.FKProducto768955">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FKSalidaAlma282847" Association="FinanzasModel.Store.FKSalidaAlma282847">
+            <End Role="TipoAyuda" EntitySet="TipoAyuda" />
+            <End Role="SalidaAlmacen" EntitySet="SalidaAlmacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKSalidaAlma377447" Association="FinanzasModel.Store.FKSalidaAlma377447">
+            <End Role="Almacen" EntitySet="Almacen" />
+            <End Role="SalidaAlmacen" EntitySet="SalidaAlmacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKSalidaAlma910466" Association="FinanzasModel.Store.FKSalidaAlma910466">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="SalidaAlmacen" EntitySet="SalidaAlmacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKSubconcept379535" Association="FinanzasModel.Store.FKSubconcept379535">
+            <End Role="ConceptoGasto" EntitySet="ConceptoGasto" />
+            <End Role="SubconceptoGasto" EntitySet="SubconceptoGasto" />
+          </AssociationSet>
+          <AssociationSet Name="FKUsuario38509" Association="FinanzasModel.Store.FKUsuario38509">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="precio" Type="money" Nullable="false" />
+          <Property Name="Productoid" Type="int" Nullable="false" />
+          <Property Name="TipoMonedaid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoriaPersona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="categoria" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CompraProducto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cuentasid" Type="int" Nullable="false" />
+          <Property Name="Productoid" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="importe" Type="money" Nullable="false" />
+          <Property Name="Usuarioid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConceptoGasto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="concepto" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ConceptoIngreso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="concepto" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="calcularPorciento" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="importe" Type="money" Nullable="false" />
+          <Property Name="TipoMonedaid" Type="int" Nullable="false" />
+          <Property Name="descriptcion" Type="varchar" MaxLength="255" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EscuelaDominical">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="asistencia" Type="int" Nullable="false" />
+          <Property Name="TemaPredicacionid" Type="int" Nullable="false" />
+          <Property Name="Usuarioid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GastoFinanzas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cuentasid" Type="int" Nullable="false" />
+          <Property Name="ConceptoGastoid" Type="int" Nullable="false" />
+          <Property Name="SubconceptoGastoid" Type="int" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="importe" Type="money" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="Usuarioid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IngresoFinanzas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cuentasid" Type="int" Nullable="false" />
+          <Property Name="ConceptoIngresoid" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="importe" Type="money" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="Usuarioid" Type="int" Nullable="false" />
+          <Property Name="Personaid" Type="int" />
+        </EntityType>
+        <EntityType Name="Misiones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lugar" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Personaid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ci" Type="varchar" Nullable="false" MaxLength="11" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="apellido1" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="apellido2" Type="varchar" MaxLength="100" />
+          <Property Name="fechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="miembro" Type="bit" Nullable="false" />
+          <Property Name="fechaBautismo" Type="datetime" />
+          <Property Name="fechaConversion" Type="datetime" />
+          <Property Name="CategoriaPersonaid" Type="int" Nullable="false" />
+          <Property Name="Misionesid" Type="int" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="UnidadMedidaid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombreRol" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SalidaAlmacen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="Almacenid" Type="int" Nullable="false" />
+          <Property Name="TipoAyudaid" Type="int" Nullable="false" />
+          <Property Name="Usuarioid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubconceptoGasto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="subconcepto" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ConceptoGastoid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TemaPredicacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tema" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TipoAyuda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TipoMoneda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="siglas" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="moneda" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UnidadMedida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="siglas" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="unidad" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="pass" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Rolid" Type="int" Nullable="false" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FKAlmacen650471">
+          <End Role="TipoMoneda" Type="FinanzasModel.Store.TipoMoneda" Multiplicity="1" />
+          <End Role="Almacen" Type="FinanzasModel.Store.Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMoneda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="TipoMonedaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAlmacen795546">
+          <End Role="Producto" Type="FinanzasModel.Store.Producto" Multiplicity="1" />
+          <End Role="Almacen" Type="FinanzasModel.Store.Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="Productoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCompraProd505569">
+          <End Role="Producto" Type="FinanzasModel.Store.Producto" Multiplicity="1" />
+          <End Role="CompraProducto" Type="FinanzasModel.Store.CompraProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompraProducto">
+              <PropertyRef Name="Productoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCompraProd527192">
+          <End Role="Cuentas" Type="FinanzasModel.Store.Cuentas" Multiplicity="1" />
+          <End Role="CompraProducto" Type="FinanzasModel.Store.CompraProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompraProducto">
+              <PropertyRef Name="Cuentasid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCompraProd845775">
+          <End Role="Usuario" Type="FinanzasModel.Store.Usuario" Multiplicity="1" />
+          <End Role="CompraProducto" Type="FinanzasModel.Store.CompraProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompraProducto">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCuentas36608">
+          <End Role="TipoMoneda" Type="FinanzasModel.Store.TipoMoneda" Multiplicity="1" />
+          <End Role="Cuentas" Type="FinanzasModel.Store.Cuentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMoneda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cuentas">
+              <PropertyRef Name="TipoMonedaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEscuelaDom17470">
+          <End Role="Usuario" Type="FinanzasModel.Store.Usuario" Multiplicity="1" />
+          <End Role="EscuelaDominical" Type="FinanzasModel.Store.EscuelaDominical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EscuelaDominical">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEscuelaDom783010">
+          <End Role="TemaPredicacion" Type="FinanzasModel.Store.TemaPredicacion" Multiplicity="1" />
+          <End Role="EscuelaDominical" Type="FinanzasModel.Store.EscuelaDominical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TemaPredicacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EscuelaDominical">
+              <PropertyRef Name="TemaPredicacionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan245216">
+          <End Role="ConceptoGasto" Type="FinanzasModel.Store.ConceptoGasto" Multiplicity="1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.Store.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConceptoGasto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="ConceptoGastoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan518235">
+          <End Role="Cuentas" Type="FinanzasModel.Store.Cuentas" Multiplicity="1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.Store.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="Cuentasid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan854732">
+          <End Role="Usuario" Type="FinanzasModel.Store.Usuario" Multiplicity="1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.Store.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan990835">
+          <End Role="SubconceptoGasto" Type="FinanzasModel.Store.SubconceptoGasto" Multiplicity="0..1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.Store.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubconceptoGasto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="SubconceptoGastoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin123343">
+          <End Role="Usuario" Type="FinanzasModel.Store.Usuario" Multiplicity="1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.Store.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin191449">
+          <End Role="ConceptoIngreso" Type="FinanzasModel.Store.ConceptoIngreso" Multiplicity="1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.Store.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConceptoIngreso">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="ConceptoIngresoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin249625">
+          <End Role="Cuentas" Type="FinanzasModel.Store.Cuentas" Multiplicity="1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.Store.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="Cuentasid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin745088">
+          <End Role="Persona" Type="FinanzasModel.Store.Persona" Multiplicity="0..1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.Store.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="Personaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKMisiones810133">
+          <End Role="Persona" Type="FinanzasModel.Store.Persona" Multiplicity="1" />
+          <End Role="Misiones" Type="FinanzasModel.Store.Misiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Misiones">
+              <PropertyRef Name="Personaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPersona44495">
+          <End Role="CategoriaPersona" Type="FinanzasModel.Store.CategoriaPersona" Multiplicity="1" />
+          <End Role="Persona" Type="FinanzasModel.Store.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaPersona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="CategoriaPersonaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPersona52500">
+          <End Role="Misiones" Type="FinanzasModel.Store.Misiones" Multiplicity="0..1" />
+          <End Role="Persona" Type="FinanzasModel.Store.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Misiones">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="Misionesid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProducto768955">
+          <End Role="UnidadMedida" Type="FinanzasModel.Store.UnidadMedida" Multiplicity="1" />
+          <End Role="Producto" Type="FinanzasModel.Store.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="UnidadMedidaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSalidaAlma282847">
+          <End Role="TipoAyuda" Type="FinanzasModel.Store.TipoAyuda" Multiplicity="1" />
+          <End Role="SalidaAlmacen" Type="FinanzasModel.Store.SalidaAlmacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAyuda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalidaAlmacen">
+              <PropertyRef Name="TipoAyudaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSalidaAlma377447">
+          <End Role="Almacen" Type="FinanzasModel.Store.Almacen" Multiplicity="1" />
+          <End Role="SalidaAlmacen" Type="FinanzasModel.Store.SalidaAlmacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalidaAlmacen">
+              <PropertyRef Name="Almacenid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSalidaAlma910466">
+          <End Role="Usuario" Type="FinanzasModel.Store.Usuario" Multiplicity="1" />
+          <End Role="SalidaAlmacen" Type="FinanzasModel.Store.SalidaAlmacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalidaAlmacen">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSubconcept379535">
+          <End Role="ConceptoGasto" Type="FinanzasModel.Store.ConceptoGasto" Multiplicity="1" />
+          <End Role="SubconceptoGasto" Type="FinanzasModel.Store.SubconceptoGasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConceptoGasto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SubconceptoGasto">
+              <PropertyRef Name="ConceptoGastoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKUsuario38509">
+          <End Role="Rol" Type="FinanzasModel.Store.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="FinanzasModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Rolid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanzasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Almacen" EntityType="FinanzasModel.Almacen" />
+          <EntitySet Name="CategoriaPersona" EntityType="FinanzasModel.CategoriaPersona" />
+          <EntitySet Name="CompraProducto" EntityType="FinanzasModel.CompraProducto" />
+          <EntitySet Name="ConceptoGasto" EntityType="FinanzasModel.ConceptoGasto" />
+          <EntitySet Name="ConceptoIngreso" EntityType="FinanzasModel.ConceptoIngreso" />
+          <EntitySet Name="Cuentas" EntityType="FinanzasModel.Cuentas" />
+          <EntitySet Name="EscuelaDominical" EntityType="FinanzasModel.EscuelaDominical" />
+          <EntitySet Name="GastoFinanzas" EntityType="FinanzasModel.GastoFinanzas" />
+          <EntitySet Name="IngresoFinanzas" EntityType="FinanzasModel.IngresoFinanzas" />
+          <EntitySet Name="Misiones" EntityType="FinanzasModel.Misiones" />
+          <EntitySet Name="Persona" EntityType="FinanzasModel.Persona" />
+          <EntitySet Name="Producto" EntityType="FinanzasModel.Producto" />
+          <EntitySet Name="Rol" EntityType="FinanzasModel.Rol" />
+          <EntitySet Name="SalidaAlmacen" EntityType="FinanzasModel.SalidaAlmacen" />
+          <EntitySet Name="SubconceptoGasto" EntityType="FinanzasModel.SubconceptoGasto" />
+          <EntitySet Name="TemaPredicacion" EntityType="FinanzasModel.TemaPredicacion" />
+          <EntitySet Name="TipoAyuda" EntityType="FinanzasModel.TipoAyuda" />
+          <EntitySet Name="TipoMoneda" EntityType="FinanzasModel.TipoMoneda" />
+          <EntitySet Name="UnidadMedida" EntityType="FinanzasModel.UnidadMedida" />
+          <EntitySet Name="Usuario" EntityType="FinanzasModel.Usuario" />
+          <AssociationSet Name="FKAlmacen650471" Association="FinanzasModel.FKAlmacen650471">
+            <End Role="TipoMoneda" EntitySet="TipoMoneda" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKAlmacen795546" Association="FinanzasModel.FKAlmacen795546">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKSalidaAlma377447" Association="FinanzasModel.FKSalidaAlma377447">
+            <End Role="Almacen" EntitySet="Almacen" />
+            <End Role="SalidaAlmacen" EntitySet="SalidaAlmacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKPersona44495" Association="FinanzasModel.FKPersona44495">
+            <End Role="CategoriaPersona" EntitySet="CategoriaPersona" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FKCompraProd505569" Association="FinanzasModel.FKCompraProd505569">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="CompraProducto" EntitySet="CompraProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FKCompraProd527192" Association="FinanzasModel.FKCompraProd527192">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="CompraProducto" EntitySet="CompraProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FKCompraProd845775" Association="FinanzasModel.FKCompraProd845775">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="CompraProducto" EntitySet="CompraProducto" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan245216" Association="FinanzasModel.FKGastoFinan245216">
+            <End Role="ConceptoGasto" EntitySet="ConceptoGasto" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKSubconcept379535" Association="FinanzasModel.FKSubconcept379535">
+            <End Role="ConceptoGasto" EntitySet="ConceptoGasto" />
+            <End Role="SubconceptoGasto" EntitySet="SubconceptoGasto" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin191449" Association="FinanzasModel.FKIngresoFin191449">
+            <End Role="ConceptoIngreso" EntitySet="ConceptoIngreso" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKCuentas36608" Association="FinanzasModel.FKCuentas36608">
+            <End Role="TipoMoneda" EntitySet="TipoMoneda" />
+            <End Role="Cuentas" EntitySet="Cuentas" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan518235" Association="FinanzasModel.FKGastoFinan518235">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin249625" Association="FinanzasModel.FKIngresoFin249625">
+            <End Role="Cuentas" EntitySet="Cuentas" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKEscuelaDom17470" Association="FinanzasModel.FKEscuelaDom17470">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="EscuelaDominical" EntitySet="EscuelaDominical" />
+          </AssociationSet>
+          <AssociationSet Name="FKEscuelaDom783010" Association="FinanzasModel.FKEscuelaDom783010">
+            <End Role="TemaPredicacion" EntitySet="TemaPredicacion" />
+            <End Role="EscuelaDominical" EntitySet="EscuelaDominical" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan854732" Association="FinanzasModel.FKGastoFinan854732">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKGastoFinan990835" Association="FinanzasModel.FKGastoFinan990835">
+            <End Role="SubconceptoGasto" EntitySet="SubconceptoGasto" />
+            <End Role="GastoFinanzas" EntitySet="GastoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin123343" Association="FinanzasModel.FKIngresoFin123343">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKIngresoFin745088" Association="FinanzasModel.FKIngresoFin745088">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="IngresoFinanzas" EntitySet="IngresoFinanzas" />
+          </AssociationSet>
+          <AssociationSet Name="FKMisiones810133" Association="FinanzasModel.FKMisiones810133">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Misiones" EntitySet="Misiones" />
+          </AssociationSet>
+          <AssociationSet Name="FKPersona52500" Association="FinanzasModel.FKPersona52500">
+            <End Role="Misiones" EntitySet="Misiones" />
+            <End Role="Persona" EntitySet="Persona" />
+          </AssociationSet>
+          <AssociationSet Name="FKProducto768955" Association="FinanzasModel.FKProducto768955">
+            <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FKUsuario38509" Association="FinanzasModel.FKUsuario38509">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FKSalidaAlma282847" Association="FinanzasModel.FKSalidaAlma282847">
+            <End Role="TipoAyuda" EntitySet="TipoAyuda" />
+            <End Role="SalidaAlmacen" EntitySet="SalidaAlmacen" />
+          </AssociationSet>
+          <AssociationSet Name="FKSalidaAlma910466" Association="FinanzasModel.FKSalidaAlma910466">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="SalidaAlmacen" EntitySet="SalidaAlmacen" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Productoid" Type="Int32" Nullable="false" />
+          <Property Name="TipoMonedaid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TipoMoneda" Relationship="FinanzasModel.FKAlmacen650471" FromRole="Almacen" ToRole="TipoMoneda" />
+          <NavigationProperty Name="Producto" Relationship="FinanzasModel.FKAlmacen795546" FromRole="Almacen" ToRole="Producto" />
+          <NavigationProperty Name="SalidaAlmacen" Relationship="FinanzasModel.FKSalidaAlma377447" FromRole="Almacen" ToRole="SalidaAlmacen" />
+        </EntityType>
+        <EntityType Name="CategoriaPersona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="categoria" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Persona" Relationship="FinanzasModel.FKPersona44495" FromRole="CategoriaPersona" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="CompraProducto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Cuentasid" Type="Int32" Nullable="false" />
+          <Property Name="Productoid" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Usuarioid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Producto" Relationship="FinanzasModel.FKCompraProd505569" FromRole="CompraProducto" ToRole="Producto" />
+          <NavigationProperty Name="Cuentas" Relationship="FinanzasModel.FKCompraProd527192" FromRole="CompraProducto" ToRole="Cuentas" />
+          <NavigationProperty Name="Usuario" Relationship="FinanzasModel.FKCompraProd845775" FromRole="CompraProducto" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="ConceptoGasto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="concepto" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="GastoFinanzas" Relationship="FinanzasModel.FKGastoFinan245216" FromRole="ConceptoGasto" ToRole="GastoFinanzas" />
+          <NavigationProperty Name="SubconceptoGasto" Relationship="FinanzasModel.FKSubconcept379535" FromRole="ConceptoGasto" ToRole="SubconceptoGasto" />
+        </EntityType>
+        <EntityType Name="ConceptoIngreso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="concepto" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="calcularPorciento" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="IngresoFinanzas" Relationship="FinanzasModel.FKIngresoFin191449" FromRole="ConceptoIngreso" ToRole="IngresoFinanzas" />
+        </EntityType>
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="importe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="TipoMonedaid" Type="Int32" Nullable="false" />
+          <Property Name="descriptcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CompraProducto" Relationship="FinanzasModel.FKCompraProd527192" FromRole="Cuentas" ToRole="CompraProducto" />
+          <NavigationProperty Name="TipoMoneda" Relationship="FinanzasModel.FKCuentas36608" FromRole="Cuentas" ToRole="TipoMoneda" />
+          <NavigationProperty Name="GastoFinanzas" Relationship="FinanzasModel.FKGastoFinan518235" FromRole="Cuentas" ToRole="GastoFinanzas" />
+          <NavigationProperty Name="IngresoFinanzas" Relationship="FinanzasModel.FKIngresoFin249625" FromRole="Cuentas" ToRole="IngresoFinanzas" />
+        </EntityType>
+        <EntityType Name="EscuelaDominical">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="asistencia" Type="Int32" Nullable="false" />
+          <Property Name="TemaPredicacionid" Type="Int32" Nullable="false" />
+          <Property Name="Usuarioid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="FinanzasModel.FKEscuelaDom17470" FromRole="EscuelaDominical" ToRole="Usuario" />
+          <NavigationProperty Name="TemaPredicacion" Relationship="FinanzasModel.FKEscuelaDom783010" FromRole="EscuelaDominical" ToRole="TemaPredicacion" />
+        </EntityType>
+        <EntityType Name="GastoFinanzas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Cuentasid" Type="Int32" Nullable="false" />
+          <Property Name="ConceptoGastoid" Type="Int32" Nullable="false" />
+          <Property Name="SubconceptoGastoid" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="importe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Usuarioid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ConceptoGasto" Relationship="FinanzasModel.FKGastoFinan245216" FromRole="GastoFinanzas" ToRole="ConceptoGasto" />
+          <NavigationProperty Name="Cuentas" Relationship="FinanzasModel.FKGastoFinan518235" FromRole="GastoFinanzas" ToRole="Cuentas" />
+          <NavigationProperty Name="Usuario" Relationship="FinanzasModel.FKGastoFinan854732" FromRole="GastoFinanzas" ToRole="Usuario" />
+          <NavigationProperty Name="SubconceptoGasto" Relationship="FinanzasModel.FKGastoFinan990835" FromRole="GastoFinanzas" ToRole="SubconceptoGasto" />
+        </EntityType>
+        <EntityType Name="IngresoFinanzas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Cuentasid" Type="Int32" Nullable="false" />
+          <Property Name="ConceptoIngresoid" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="importe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Usuarioid" Type="Int32" Nullable="false" />
+          <Property Name="Personaid" Type="Int32" />
+          <NavigationProperty Name="ConceptoIngreso" Relationship="FinanzasModel.FKIngresoFin191449" FromRole="IngresoFinanzas" ToRole="ConceptoIngreso" />
+          <NavigationProperty Name="Cuentas" Relationship="FinanzasModel.FKIngresoFin249625" FromRole="IngresoFinanzas" ToRole="Cuentas" />
+          <NavigationProperty Name="Usuario" Relationship="FinanzasModel.FKIngresoFin123343" FromRole="IngresoFinanzas" ToRole="Usuario" />
+          <NavigationProperty Name="Persona" Relationship="FinanzasModel.FKIngresoFin745088" FromRole="IngresoFinanzas" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="Misiones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="lugar" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Personaid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lider" Relationship="FinanzasModel.FKMisiones810133" FromRole="Misiones" ToRole="Persona" />
+          <NavigationProperty Name="Personas" Relationship="FinanzasModel.FKPersona52500" FromRole="Misiones" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ci" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="apellido1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="apellido2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="miembro" Type="Boolean" Nullable="false" />
+          <Property Name="fechaBautismo" Type="DateTime" Precision="3" />
+          <Property Name="fechaConversion" Type="DateTime" Precision="3" />
+          <Property Name="CategoriaPersonaid" Type="Int32" Nullable="false" />
+          <Property Name="Misionesid" Type="Int32" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CategoriaPersona" Relationship="FinanzasModel.FKPersona44495" FromRole="Persona" ToRole="CategoriaPersona" />
+          <NavigationProperty Name="IngresoFinanzas" Relationship="FinanzasModel.FKIngresoFin745088" FromRole="Persona" ToRole="IngresoFinanzas" />
+          <NavigationProperty Name="MisionesAtendidas" Relationship="FinanzasModel.FKMisiones810133" FromRole="Persona" ToRole="Misiones" />
+          <NavigationProperty Name="MisionPertenece" Relationship="FinanzasModel.FKPersona52500" FromRole="Persona" ToRole="Misiones" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="UnidadMedidaid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Almacen" Relationship="FinanzasModel.FKAlmacen795546" FromRole="Producto" ToRole="Almacen" />
+          <NavigationProperty Name="CompraProducto" Relationship="FinanzasModel.FKCompraProd505569" FromRole="Producto" ToRole="CompraProducto" />
+          <NavigationProperty Name="UnidadMedida" Relationship="FinanzasModel.FKProducto768955" FromRole="Producto" ToRole="UnidadMedida" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreRol" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Usuario" Relationship="FinanzasModel.FKUsuario38509" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="SalidaAlmacen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Almacenid" Type="Int32" Nullable="false" />
+          <Property Name="TipoAyudaid" Type="Int32" Nullable="false" />
+          <Property Name="Usuarioid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Almacen" Relationship="FinanzasModel.FKSalidaAlma377447" FromRole="SalidaAlmacen" ToRole="Almacen" />
+          <NavigationProperty Name="TipoAyuda" Relationship="FinanzasModel.FKSalidaAlma282847" FromRole="SalidaAlmacen" ToRole="TipoAyuda" />
+          <NavigationProperty Name="Usuario" Relationship="FinanzasModel.FKSalidaAlma910466" FromRole="SalidaAlmacen" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="SubconceptoGasto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="subconcepto" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="ConceptoGastoid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ConceptoGasto" Relationship="FinanzasModel.FKSubconcept379535" FromRole="SubconceptoGasto" ToRole="ConceptoGasto" />
+          <NavigationProperty Name="GastoFinanzas" Relationship="FinanzasModel.FKGastoFinan990835" FromRole="SubconceptoGasto" ToRole="GastoFinanzas" />
+        </EntityType>
+        <EntityType Name="TemaPredicacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tema" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="EscuelaDominical" Relationship="FinanzasModel.FKEscuelaDom783010" FromRole="TemaPredicacion" ToRole="EscuelaDominical" />
+        </EntityType>
+        <EntityType Name="TipoAyuda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SalidaAlmacen" Relationship="FinanzasModel.FKSalidaAlma282847" FromRole="TipoAyuda" ToRole="SalidaAlmacen" />
+        </EntityType>
+        <EntityType Name="TipoMoneda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="siglas" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="moneda" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Almacen" Relationship="FinanzasModel.FKAlmacen650471" FromRole="TipoMoneda" ToRole="Almacen" />
+          <NavigationProperty Name="Cuentas" Relationship="FinanzasModel.FKCuentas36608" FromRole="TipoMoneda" ToRole="Cuentas" />
+        </EntityType>
+        <EntityType Name="UnidadMedida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="siglas" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="unidad" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Producto" Relationship="FinanzasModel.FKProducto768955" FromRole="UnidadMedida" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="pass" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Rolid" Type="Int32" Nullable="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CompraProducto" Relationship="FinanzasModel.FKCompraProd845775" FromRole="Usuario" ToRole="CompraProducto" />
+          <NavigationProperty Name="EscuelaDominical" Relationship="FinanzasModel.FKEscuelaDom17470" FromRole="Usuario" ToRole="EscuelaDominical" />
+          <NavigationProperty Name="GastoFinanzas" Relationship="FinanzasModel.FKGastoFinan854732" FromRole="Usuario" ToRole="GastoFinanzas" />
+          <NavigationProperty Name="IngresoFinanzas" Relationship="FinanzasModel.FKIngresoFin123343" FromRole="Usuario" ToRole="IngresoFinanzas" />
+          <NavigationProperty Name="Rol" Relationship="FinanzasModel.FKUsuario38509" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="SalidaAlmacen" Relationship="FinanzasModel.FKSalidaAlma910466" FromRole="Usuario" ToRole="SalidaAlmacen" />
+        </EntityType>
+        <Association Name="FKAlmacen650471">
+          <End Role="TipoMoneda" Type="FinanzasModel.TipoMoneda" Multiplicity="1" />
+          <End Role="Almacen" Type="FinanzasModel.Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMoneda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="TipoMonedaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKAlmacen795546">
+          <End Role="Producto" Type="FinanzasModel.Producto" Multiplicity="1" />
+          <End Role="Almacen" Type="FinanzasModel.Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="Productoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSalidaAlma377447">
+          <End Role="Almacen" Type="FinanzasModel.Almacen" Multiplicity="1" />
+          <End Role="SalidaAlmacen" Type="FinanzasModel.SalidaAlmacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalidaAlmacen">
+              <PropertyRef Name="Almacenid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPersona44495">
+          <End Role="CategoriaPersona" Type="FinanzasModel.CategoriaPersona" Multiplicity="1" />
+          <End Role="Persona" Type="FinanzasModel.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaPersona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="CategoriaPersonaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCompraProd505569">
+          <End Role="Producto" Type="FinanzasModel.Producto" Multiplicity="1" />
+          <End Role="CompraProducto" Type="FinanzasModel.CompraProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompraProducto">
+              <PropertyRef Name="Productoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCompraProd527192">
+          <End Role="Cuentas" Type="FinanzasModel.Cuentas" Multiplicity="1" />
+          <End Role="CompraProducto" Type="FinanzasModel.CompraProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompraProducto">
+              <PropertyRef Name="Cuentasid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCompraProd845775">
+          <End Role="Usuario" Type="FinanzasModel.Usuario" Multiplicity="1" />
+          <End Role="CompraProducto" Type="FinanzasModel.CompraProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CompraProducto">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan245216">
+          <End Role="ConceptoGasto" Type="FinanzasModel.ConceptoGasto" Multiplicity="1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConceptoGasto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="ConceptoGastoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSubconcept379535">
+          <End Role="ConceptoGasto" Type="FinanzasModel.ConceptoGasto" Multiplicity="1" />
+          <End Role="SubconceptoGasto" Type="FinanzasModel.SubconceptoGasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConceptoGasto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SubconceptoGasto">
+              <PropertyRef Name="ConceptoGastoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin191449">
+          <End Role="ConceptoIngreso" Type="FinanzasModel.ConceptoIngreso" Multiplicity="1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConceptoIngreso">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="ConceptoIngresoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCuentas36608">
+          <End Role="TipoMoneda" Type="FinanzasModel.TipoMoneda" Multiplicity="1" />
+          <End Role="Cuentas" Type="FinanzasModel.Cuentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoMoneda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cuentas">
+              <PropertyRef Name="TipoMonedaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan518235">
+          <End Role="Cuentas" Type="FinanzasModel.Cuentas" Multiplicity="1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="Cuentasid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin249625">
+          <End Role="Cuentas" Type="FinanzasModel.Cuentas" Multiplicity="1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuentas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="Cuentasid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEscuelaDom17470">
+          <End Role="Usuario" Type="FinanzasModel.Usuario" Multiplicity="1" />
+          <End Role="EscuelaDominical" Type="FinanzasModel.EscuelaDominical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EscuelaDominical">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEscuelaDom783010">
+          <End Role="TemaPredicacion" Type="FinanzasModel.TemaPredicacion" Multiplicity="1" />
+          <End Role="EscuelaDominical" Type="FinanzasModel.EscuelaDominical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TemaPredicacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="EscuelaDominical">
+              <PropertyRef Name="TemaPredicacionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan854732">
+          <End Role="Usuario" Type="FinanzasModel.Usuario" Multiplicity="1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKGastoFinan990835">
+          <End Role="SubconceptoGasto" Type="FinanzasModel.SubconceptoGasto" Multiplicity="0..1" />
+          <End Role="GastoFinanzas" Type="FinanzasModel.GastoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubconceptoGasto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GastoFinanzas">
+              <PropertyRef Name="SubconceptoGastoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin123343">
+          <End Role="Usuario" Type="FinanzasModel.Usuario" Multiplicity="1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKIngresoFin745088">
+          <End Role="Persona" Type="FinanzasModel.Persona" Multiplicity="0..1" />
+          <End Role="IngresoFinanzas" Type="FinanzasModel.IngresoFinanzas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IngresoFinanzas">
+              <PropertyRef Name="Personaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKMisiones810133">
+          <End Role="Persona" Type="FinanzasModel.Persona" Multiplicity="1" />
+          <End Role="Misiones" Type="FinanzasModel.Misiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Misiones">
+              <PropertyRef Name="Personaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKPersona52500">
+          <End Role="Misiones" Type="FinanzasModel.Misiones" Multiplicity="0..1" />
+          <End Role="Persona" Type="FinanzasModel.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Misiones">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="Misionesid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProducto768955">
+          <End Role="UnidadMedida" Type="FinanzasModel.UnidadMedida" Multiplicity="1" />
+          <End Role="Producto" Type="FinanzasModel.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadMedida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="UnidadMedidaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKUsuario38509">
+          <End Role="Rol" Type="FinanzasModel.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="FinanzasModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Rolid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSalidaAlma282847">
+          <End Role="TipoAyuda" Type="FinanzasModel.TipoAyuda" Multiplicity="1" />
+          <End Role="SalidaAlmacen" Type="FinanzasModel.SalidaAlmacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAyuda">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalidaAlmacen">
+              <PropertyRef Name="TipoAyudaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKSalidaAlma910466">
+          <End Role="Usuario" Type="FinanzasModel.Usuario" Multiplicity="1" />
+          <End Role="SalidaAlmacen" Type="FinanzasModel.SalidaAlmacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="SalidaAlmacen">
+              <PropertyRef Name="Usuarioid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanzasModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Almacen">
+            <EntityTypeMapping TypeName="FinanzasModel.Almacen">
+              <MappingFragment StoreEntitySet="Almacen">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="Productoid" ColumnName="Productoid" />
+                <ScalarProperty Name="TipoMonedaid" ColumnName="TipoMonedaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriaPersona">
+            <EntityTypeMapping TypeName="FinanzasModel.CategoriaPersona">
+              <MappingFragment StoreEntitySet="CategoriaPersona">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompraProducto">
+            <EntityTypeMapping TypeName="FinanzasModel.CompraProducto">
+              <MappingFragment StoreEntitySet="CompraProducto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Cuentasid" ColumnName="Cuentasid" />
+                <ScalarProperty Name="Productoid" ColumnName="Productoid" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="Usuarioid" ColumnName="Usuarioid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConceptoGasto">
+            <EntityTypeMapping TypeName="FinanzasModel.ConceptoGasto">
+              <MappingFragment StoreEntitySet="ConceptoGasto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConceptoIngreso">
+            <EntityTypeMapping TypeName="FinanzasModel.ConceptoIngreso">
+              <MappingFragment StoreEntitySet="ConceptoIngreso">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="calcularPorciento" ColumnName="calcularPorciento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="FinanzasModel.Cuentas">
+              <MappingFragment StoreEntitySet="Cuentas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="TipoMonedaid" ColumnName="TipoMonedaid" />
+                <ScalarProperty Name="descriptcion" ColumnName="descriptcion" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EscuelaDominical">
+            <EntityTypeMapping TypeName="FinanzasModel.EscuelaDominical">
+              <MappingFragment StoreEntitySet="EscuelaDominical">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="asistencia" ColumnName="asistencia" />
+                <ScalarProperty Name="TemaPredicacionid" ColumnName="TemaPredicacionid" />
+                <ScalarProperty Name="Usuarioid" ColumnName="Usuarioid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GastoFinanzas">
+            <EntityTypeMapping TypeName="FinanzasModel.GastoFinanzas">
+              <MappingFragment StoreEntitySet="GastoFinanzas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Cuentasid" ColumnName="Cuentasid" />
+                <ScalarProperty Name="ConceptoGastoid" ColumnName="ConceptoGastoid" />
+                <ScalarProperty Name="SubconceptoGastoid" ColumnName="SubconceptoGastoid" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Usuarioid" ColumnName="Usuarioid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IngresoFinanzas">
+            <EntityTypeMapping TypeName="FinanzasModel.IngresoFinanzas">
+              <MappingFragment StoreEntitySet="IngresoFinanzas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Cuentasid" ColumnName="Cuentasid" />
+                <ScalarProperty Name="ConceptoIngresoid" ColumnName="ConceptoIngresoid" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Usuarioid" ColumnName="Usuarioid" />
+                <ScalarProperty Name="Personaid" ColumnName="Personaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Misiones">
+            <EntityTypeMapping TypeName="FinanzasModel.Misiones">
+              <MappingFragment StoreEntitySet="Misiones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="lugar" ColumnName="lugar" />
+                <ScalarProperty Name="Personaid" ColumnName="Personaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persona">
+            <EntityTypeMapping TypeName="FinanzasModel.Persona">
+              <MappingFragment StoreEntitySet="Persona">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ci" ColumnName="ci" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="miembro" ColumnName="miembro" />
+                <ScalarProperty Name="fechaBautismo" ColumnName="fechaBautismo" />
+                <ScalarProperty Name="fechaConversion" ColumnName="fechaConversion" />
+                <ScalarProperty Name="CategoriaPersonaid" ColumnName="CategoriaPersonaid" />
+                <ScalarProperty Name="Misionesid" ColumnName="Misionesid" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="FinanzasModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="UnidadMedidaid" ColumnName="UnidadMedidaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="FinanzasModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalidaAlmacen">
+            <EntityTypeMapping TypeName="FinanzasModel.SalidaAlmacen">
+              <MappingFragment StoreEntitySet="SalidaAlmacen">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="Almacenid" ColumnName="Almacenid" />
+                <ScalarProperty Name="TipoAyudaid" ColumnName="TipoAyudaid" />
+                <ScalarProperty Name="Usuarioid" ColumnName="Usuarioid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubconceptoGasto">
+            <EntityTypeMapping TypeName="FinanzasModel.SubconceptoGasto">
+              <MappingFragment StoreEntitySet="SubconceptoGasto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="subconcepto" ColumnName="subconcepto" />
+                <ScalarProperty Name="ConceptoGastoid" ColumnName="ConceptoGastoid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemaPredicacion">
+            <EntityTypeMapping TypeName="FinanzasModel.TemaPredicacion">
+              <MappingFragment StoreEntitySet="TemaPredicacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tema" ColumnName="tema" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoAyuda">
+            <EntityTypeMapping TypeName="FinanzasModel.TipoAyuda">
+              <MappingFragment StoreEntitySet="TipoAyuda">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoMoneda">
+            <EntityTypeMapping TypeName="FinanzasModel.TipoMoneda">
+              <MappingFragment StoreEntitySet="TipoMoneda">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="siglas" ColumnName="siglas" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnidadMedida">
+            <EntityTypeMapping TypeName="FinanzasModel.UnidadMedida">
+              <MappingFragment StoreEntitySet="UnidadMedida">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="siglas" ColumnName="siglas" />
+                <ScalarProperty Name="unidad" ColumnName="unidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="FinanzasModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="Rolid" ColumnName="Rolid" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
