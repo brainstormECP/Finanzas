@@ -1,4 +1,4 @@
-﻿@using DevExpress.Web.Mvc.UI
+﻿@*@using DevExpress.Web.Mvc.UI
 @Html.DevExpress().ReportViewer(settings =>{
     // The following settings are necessary for a Report Viewer. 
     settings.Name = "reportViewer1";
@@ -7,5 +7,5 @@
     // These settings are necessary as well. 
     settings.CallbackRouteValues = new { Controller="Reporte", Action="ReportViewerPartial" };
     settings.ExportRouteValues = new { Controller="Reporte", Action="ExportReportViewer" };
-    }).GetHtml()
+    }).GetHtml()*@
 

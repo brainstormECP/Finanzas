@@ -5,12 +5,12 @@
     ViewBag.Title = "Reportes";
 }
 <div class="row">
-    @Html.DevExpress().ReportToolbar(settings =>
+    @*@Html.DevExpress().ReportToolbar(settings =>
 {
     // The following settings are necessary for a Report Toolbar. 
     settings.Name = "ReportToolbar";
     settings.ReportViewerName = "reportViewer1";
-}).GetHtml()
-
+}).GetHtml()*@
+    <h3>We are migrating the reports from DEVEXPRESS</h3>
     @Html.Partial("ReportViewerPartial")
 </div>

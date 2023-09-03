@@ -99,7 +99,7 @@ namespace GestionZafra.Controllers
                 var user = db.Usuario.First(u => u.nombreUsuario == UserName && u.activo);
                 result = CompareEqualsPasswords(user.pass, Password);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 result = false;
             }
@@ -114,7 +114,7 @@ namespace GestionZafra.Controllers
             {
                 var user = db.Usuario.First(u => u.nombreUsuario == UserName && u.activo);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 result = false;
             }

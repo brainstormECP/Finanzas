@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,43 +41,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v12.2.Core.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v12.2.Core.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v12.2.Core.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.SpellChecker.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxScheduler.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxScheduler.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxTreeList.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxTreeList.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.Mvc.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v12.2.Web, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v12.2, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v12.2.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v12.2.Web, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v12.2.Web.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v12.2.Core, Version=12.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v12.2.Core.resources, Version=12.2.0.0, Culture=es, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -316,132 +281,6 @@
       <DependentUpon>FinanzasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\Compras.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Compras.designer.cs">
-      <DependentUpon>Compras.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\BautizadosXFecha.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\BautizadosXFecha.designer.cs">
-      <DependentUpon>BautizadosXFecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ConvertidosXFecha.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\ConvertidosXFecha.designer.cs">
-      <DependentUpon>ConvertidosXFecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Almacen.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Almacen.designer.cs">
-      <DependentUpon>Almacen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\SubreportGastoTotal.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\SubreportGastoTotal.designer.cs">
-      <DependentUpon>SubreportGastoTotal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\SubreportTotalIngresosFecha.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\SubreportTotalIngresosFecha.designer.cs">
-      <DependentUpon>SubreportTotalIngresosFecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\IngresosXFecha.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\IngresosXFecha.designer.cs">
-      <DependentUpon>IngresosXFecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\SubreportTotalCuenta.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\SubreportTotalCuenta.designer.cs">
-      <DependentUpon>SubreportTotalCuenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\EstadosCuentas.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\EstadosCuentas.designer.cs">
-      <DependentUpon>EstadosCuentas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\CumpleannosXFecha.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\CumpleannosXFecha.designer.cs">
-      <DependentUpon>CumpleannosXFecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\PersonasXCategoria.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\PersonasXCategoria.designer.cs">
-      <DependentUpon>PersonasXCategoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\SubreportPersonas.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\SubreportPersonas.designer.cs">
-      <DependentUpon>SubreportPersonas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\PersonasAgrupadasXCategoria.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\PersonasAgrupadasXCategoria.designer.cs">
-      <DependentUpon>PersonasAgrupadasXCategoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\RegistroAsistencia.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\RegistroAsistencia.designer.cs">
-      <DependentUpon>RegistroAsistencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Salidas.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Salidas.designer.cs">
-      <DependentUpon>Salidas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Gastos.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Gastos.designer.cs">
-      <DependentUpon>Gastos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Ingresos.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Ingresos.designer.cs">
-      <DependentUpon>Ingresos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Cumpleanos.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Cumpleanos.designer.cs">
-      <DependentUpon>Cumpleanos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Miembros.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Miembros.designer.cs">
-      <DependentUpon>Miembros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Diezmadores.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Diezmadores.designer.cs">
-      <DependentUpon>Diezmadores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\Plantilla.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\Plantilla.designer.cs">
-      <DependentUpon>Plantilla.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\configuracion.xml">
@@ -788,6 +627,7 @@
     <Content Include="Models\FinanzasModel.edmx.diagram">
       <DependentUpon>FinanzasModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\FinanzasModel.edmx.sql" />
     <Content Include="Models\FinanzasModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FinanzasModel.edmx</DependentUpon>
@@ -947,70 +787,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Reportes\Compras.resx">
-      <DependentUpon>Compras.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\BautizadosXFecha.resx">
-      <DependentUpon>BautizadosXFecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ConvertidosXFecha.resx">
-      <DependentUpon>ConvertidosXFecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Almacen.resx">
-      <DependentUpon>Almacen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\SubreportGastoTotal.resx">
-      <DependentUpon>SubreportGastoTotal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\SubreportTotalIngresosFecha.resx">
-      <DependentUpon>SubreportTotalIngresosFecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\IngresosXFecha.resx">
-      <DependentUpon>IngresosXFecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\SubreportTotalCuenta.resx">
-      <DependentUpon>SubreportTotalCuenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EstadosCuentas.resx">
-      <DependentUpon>EstadosCuentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\CumpleannosXFecha.resx">
-      <DependentUpon>CumpleannosXFecha.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PersonasXCategoria.resx">
-      <DependentUpon>PersonasXCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\SubreportPersonas.resx">
-      <DependentUpon>SubreportPersonas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PersonasAgrupadasXCategoria.resx">
-      <DependentUpon>PersonasAgrupadasXCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RegistroAsistencia.resx">
-      <DependentUpon>RegistroAsistencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Salidas.resx">
-      <DependentUpon>Salidas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Gastos.resx">
-      <DependentUpon>Gastos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Ingresos.resx">
-      <DependentUpon>Ingresos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Cumpleanos.resx">
-      <DependentUpon>Cumpleanos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Miembros.resx">
-      <DependentUpon>Miembros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Diezmadores.resx">
-      <DependentUpon>Diezmadores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Plantilla.resx">
-      <DependentUpon>Plantilla.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

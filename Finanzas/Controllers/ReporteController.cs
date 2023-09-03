@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DevExpress.XtraReports.UI;
+//using DevExpress.XtraReports.UI;
 using Finanzas.Models;
-using Finanzas.Reportes;
+//using Finanzas.Reportes;
 
 namespace Finanzas.Controllers
 {
     public class ReporteController : Controller
     {
         private Entities db = new Entities();
-        static XtraReport report;
+        //static XtraReport report;
 
         //
         // GET: /Reporte/
@@ -24,48 +24,50 @@ namespace Finanzas.Controllers
 
         public ActionResult ReportViewerPartial()
         {
-            ViewData["Report"] = report;
-            return PartialView("ReportViewerPartial");
+            //ViewData["Report"] = report;
+            //return PartialView("ReportViewerPartial");
+            throw new NotImplementedException();
         }
 
         public ActionResult ExportReportViewer()
         {
-            return DevExpress.Web.Mvc.ReportViewerExtension.ExportTo(report);
+            //return DevExpress.Web.Mvc.ReportViewerExtension.ExportTo(report);
+            throw new NotImplementedException();
         }
 
         public ActionResult Compras()
         {
-            report = new Compras();
+            //report = new Compras();
             return View("Plantilla");
         }
 
         public ActionResult Cumpleanos()
         {
-            report = new Cumpleanos();
+            //report = new Cumpleanos();
             return View("Plantilla");
         }
 
         public ActionResult Diezmadores()
         {
-            report = new Diezmadores();
+            //report = new Diezmadores();
             return View("Plantilla");
         }
 
         public ActionResult Gastos()
         {
-            report = new Gastos();
+            //report = new Gastos();
             return View("Plantilla");
         }
 
         public ActionResult Ingresos()
         {
-            report = new Ingresos();
+            //report = new Ingresos();
             return View("Plantilla");
         }
 
         public ActionResult Miembros()
         {
-            report = new Miembros();
+            //report = new Miembros();
             return View("Plantilla");
         }
 
@@ -82,16 +84,16 @@ namespace Finanzas.Controllers
         [HttpPost]
         public ActionResult RegistroAsistencia(RegistroAsistenciaModel registro)
         {
-            string lista = registro.CategoriaPersonaid.Aggregate("", (current, i) => current + (i + ","));
-            var r = new RegistroAsistencia() { Trimestre = { Value = registro.Trimestre }, ListaCategoria = { Value = lista } };
-            r.CargarDatos();
-            report = r;
+            //string lista = registro.CategoriaPersonaid.Aggregate("", (current, i) => current + (i + ","));
+            //var r = new RegistroAsistencia() { Trimestre = { Value = registro.Trimestre }, ListaCategoria = { Value = lista } };
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
         public ActionResult Salidas()
         {
-            report = new Salidas();
+            //report = new Salidas();
             return View("Plantilla");
         }
 
@@ -105,9 +107,9 @@ namespace Finanzas.Controllers
         public ActionResult PersonaxCategoria(CategoriaModel c)
         {
 
-            var r = new PersonasXCategoria(){Categoria = {Value = db.CategoriaPersona.Find(c.CategoriaPersonaid).categoria}};
-            r.CargarDatos();
-            report = r;
+            //var r = new PersonasXCategoria(){Categoria = {Value = db.CategoriaPersona.Find(c.CategoriaPersonaid).categoria}};
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
@@ -121,9 +123,9 @@ namespace Finanzas.Controllers
         public ActionResult CumpleannoXFecha(FechaModel fechaModel)
         {
 
-            var r = new CumpleannosXFecha() { FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
-            r.CargarDatos();
-            report = r;
+            //var r = new CumpleannosXFecha() { FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
@@ -136,9 +138,9 @@ namespace Finanzas.Controllers
         public ActionResult BautizadosXFecha(FechaModel fechaModel)
         {
 
-            var r = new BautizadosXFecha() { FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
-            r.CargarDatos();
-            report = r;
+            //var r = new BautizadosXFecha() { FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
@@ -151,18 +153,18 @@ namespace Finanzas.Controllers
         public ActionResult ConvertidosXFecha(FechaModel fechaModel)
         {
 
-            var r = new ConvertidosXFecha() { FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
-            r.CargarDatos();
-            report = r;
+            //var r = new ConvertidosXFecha() { FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
 
         public ActionResult EstadosCuentas()
         {
-            var r = new EstadosCuentas();
-            r.CargarDatos();
-            report = r;
+            //var r = new EstadosCuentas();
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
@@ -176,19 +178,19 @@ namespace Finanzas.Controllers
         [HttpPost]
         public ActionResult IngresosXFecha(IngresosModel fechaModel)
         {
-            string lista = fechaModel.ConceptoId.Aggregate("", (current, i) => current + (i + ","));
-            var r = new IngresosXFecha() { ListaConceptos = { Value = lista }, FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
-            r.CargarDatos();
-            report = r;
+            //string lista = fechaModel.ConceptoId.Aggregate("", (current, i) => current + (i + ","));
+            //var r = new IngresosXFecha() { ListaConceptos = { Value = lista }, FechaInicio = { Value = fechaModel.FechaInicio }, FechaFin = { Value = fechaModel.FechaFin } };
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
 
         public ActionResult Almacen()
         {
-            var r = new Reportes.Almacen();
-            r.CargarDatos();
-            report = r;
+            //var r = new Reportes.Almacen();
+            //r.CargarDatos();
+            //report = r;
             return View("Plantilla");
         }
 
