@@ -8,7 +8,7 @@ This is a finance management web application intended for Churchs and the way th
 - Keep a list of people in the church and it's missions.
 - Keep track of the predication themes in the Dominical School.
 - Manage the missions of the church.
-- Manage the finance accounts, incomes and expences.
+- Manage the finance accounts, incomes and expenses.
 - Manage a storage of products intended to help people, keep tracks of product purchases and deliveries to the final purpose.
 - Output several reports to facilitate the analysis of the information. (In migration process)
 
